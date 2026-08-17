@@ -1,0 +1,14 @@
+# Python dependencies for the video watcher.
+#
+#   py -m pip install -r requirements.txt
+#
+# That is the whole list. Everything else the pipeline uses is Python's own
+# standard library (argparse, csv, json, os, re, shutil, statistics,
+# subprocess, sys, pathlib, urllib).
+
+yt-dlp>=2024.12.13
+
+# NOT installable with pip - install these separately, see README.md:
+#   ffmpeg   required. Frames, contact sheets, cut detection, loudness.
+#   Node.js  optional. yt-dlp uses it as a JavaScript runtime for some videos.
+#            The pipeline skips the flag automatically when Node is absent.

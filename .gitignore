@@ -1,0 +1,44 @@
+# ---------------------------------------------------------------------------
+# Analysis output and generated media. Bulky, disposable, regenerable.
+# The package ships the tools and the instructions - never the runs.
+# ---------------------------------------------------------------------------
+video-research/
+*/research/watcher/
+**/research/watcher/
+
+# Video projects the skill creates. Your work, not the package's.
+*/outputs/
+*/cast/
+*/world/
+*/boards/
+
+# Downloaded sources, frames, sheets - belt and braces if a run lands oddly
+*.mp4
+*.webm
+*.mkv
+*.m4a
+*.vtt
+*.info.json
+
+# ---------------------------------------------------------------------------
+# Local configuration. Your rates, your budget, your machine paths.
+# The .example files are what ships; these are what you edit.
+# ---------------------------------------------------------------------------
+.env
+.env.local
+tools/video-watcher/config.json
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# ---------------------------------------------------------------------------
+# OS noise
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini

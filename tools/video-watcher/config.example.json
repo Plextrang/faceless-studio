@@ -1,0 +1,44 @@
+{
+  "_README": "Copy this file to config.json and edit it. config.json is gitignored, so your numbers stay yours. If config.json is absent the tool falls back to this file, so a fresh copy runs with no setup at all.",
+
+  "output_root": "video-research",
+  "_output_root": "Where analyses are written. A relative path resolves against the package root (the folder holding README.md), never the current directory. Override per run with --root, or globally with the VIDEO_WATCHER_ROOT environment variable.",
+
+  "font_path": null,
+  "_font_path": "Full path to a bold sans TTF used to burn timestamps into contact sheets. null = auto-detect (Arial Bold on Windows, DejaVu/Liberation on Linux, Arial Bold on macOS).",
+
+  "credits": {
+    "_README": "Your generation provider's rates and your own per-video budget. These are PLACEHOLDERS - nothing here is a real quoted price. Rates move; look up your provider's live pricing and put it here. The analysis reads these from data/cost_config.json inside each run.",
+    "unit_label": "credits",
+    "rates": {
+      "still_image": null,
+      "short_clip_3s": null,
+      "clip_5s_720p": null,
+      "coded_template": 0
+    },
+    "_rates": "null = unknown. Any row priced against a null rate is reported as 'rate not configured' rather than guessed. coded_template is 0 by definition: code costs nothing to run.",
+    "budget_per_video": {
+      "min": null,
+      "max": null
+    },
+    "_budget_per_video": "Your ceiling for reproducing one video. null = no budget set, in which case totals are reported without a within/over verdict. Example: 150 / 250."
+  },
+
+  "detection": {
+    "_README": "Pacing tuning. Change these only with a reason - the defaults are the result of measurement, and METHOD.md sections 4-6 explain each one.",
+    "base_threshold": 0.20,
+    "threshold_ladder": [0.15, 0.12],
+    "secondary_threshold": 0.12,
+    "merge_window": 1.0,
+    "min_merged_per_min": 4.0,
+    "band": [5.0, 30.0],
+    "gap_limit": 15.0,
+    "fill_every": 5.0,
+    "dead_ssim": 0.97
+  },
+
+  "download": {
+    "max_height": 720,
+    "_max_height": "720 is deliberate: 1280x720 frames sit under the vision model's long-edge ceiling, so on-screen text stays readable without paying for pixels that get downscaled away."
+  }
+}
